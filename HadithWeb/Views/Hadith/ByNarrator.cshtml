@@ -1,0 +1,36 @@
+﻿@model IEnumerable<HadithWeb.Models.Hadith>
+
+@{
+    ViewData["Title"] = "أحاديث " + ViewBag.NarratorName;
+}
+
+<div class="container mt-4">
+    <h2 class="text-center mb-4">أحاديث الراوي: <span class="text-primary">@ViewBag.NarratorName</span></h2>
+
+    <div class="row">
+        @if (Model != null && Model.Any())
+        {
+            @foreach (var item in Model)
+            {
+                <div class="col-md-12 mb-3">
+                    <div class="card shadow-sm">
+                        <div class="card-body text-right" dir="rtl">
+                            <h5 class="card-text text-dark" style="line-height: 1.8;">@item.Content</h5>
+                            <hr />
+                            <div class="d-flex justify-content-between">
+                                <span class="badge bg-info text-dark">المصدر: @item.Source</span>
+                                <span class="text-muted small">رقم الحديث: @item.Id</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        }
+        else
+        {
+            <div class="alert alert-warning text-center">
+                لا توجد أحاديث مسجلة لهذا الراوي حالياً.
+            </div>
+        }
+    </div>
+</div>

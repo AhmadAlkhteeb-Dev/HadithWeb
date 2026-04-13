@@ -1,0 +1,32 @@
+﻿@model IEnumerable<HadithWeb.Models.Hadith>
+
+<div class="container mt-4 text-right" dir="rtl">
+    <h2 class="text-primary mb-4 border-bottom pb-2">@ViewBag.CategoryName</h2>
+
+    @if (Model != null && Model.Any())
+    {
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                <div class="col-md-12 mb-3">
+                    <div class="card shadow-sm border-0" style="border-right: 5px solid #28a745 !important;">
+                        <div class="card-body">
+                            <p class="card-text h4 mb-3" style="line-height: 1.8;">@item.Content</p>
+                            <div class="d-flex justify-content-between text-muted small border-top pt-2">
+                                <span><strong>الراوي:</strong> @(item.Narrator?.Name ?? "غير معروف")</span>
+                                <span><strong>المصدر:</strong> @(item.Source ?? "غير محدد")</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+    else
+    {
+        <div class="alert alert-warning text-center">
+            <p>لا توجد أحاديث مرتبطة بهذا القسم (رقم التصنيف الحالي: @Context.Request.Query["categoryId"])</p>
+            <a asp-action="Index" asp-route-categoryId="18" class="btn btn-success">اضغط هنا لفتح التصنيف رقم 18 (العقيدة)</a>
+        </div>
+    }
+</div>

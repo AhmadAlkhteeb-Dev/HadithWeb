@@ -1,0 +1,18 @@
+﻿@model IEnumerable<HadithWeb.Models.Category>
+
+<div class="container mt-5 text-right" dir="rtl">
+    <h2 class="text-primary mb-4">قائمة تصنيفات الأحاديث</h2>
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="col-md-4 mb-3">
+                <div class="card shadow-sm">
+                    <div class="card-body d-flex justify-content-between">
+                        <span>@item.Name</span>
+                        <a asp-controller="Hadith" asp-action="Index" asp-route-categoryId="@item.Id" class="btn btn-sm btn-primary">عرض</a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

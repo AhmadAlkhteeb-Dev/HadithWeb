@@ -1,0 +1,156 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+    font-family: 'Cairo', sans-serif !important;
+}
+
+h1, h2, h3, .card-title {
+    font-family: 'Amiri', serif !important;
+    color: #2c3e50;
+}
+.form-floating > .form-control-plaintext::placeholder, .form-floating > .form-control::placeholder {
+  color: var(--bs-secondary-color);
+  text-align: end;
+}
+
+.form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
+  text-align: start;
+}
+.card {
+    margin-bottom: 40px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 20px;
+}
+/* تأثير احترافي للبطاقات */
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+    .card:hover {
+        transform: translateY(-5px); /* رفع البطاقة للأعلى */
+        box-shadow: 0 12px 20px rgba(0,0,0,0.15) !important; /* تقوية الظل */
+        background-color: rgba(255, 255, 255, 1) !important; /* إزالة الشفافية عند الوقوف عليها */
+    }
+/* تأثير الضوء المحيط بالبطاقة */
+.islamic-card:hover {
+    box-shadow: 0 0 20px rgba(44, 62, 80, 0.2) !important;
+    border-right-color: #1a252f !important;
+    background: linear-gradient(to left, rgba(255,255,255,1), rgba(244, 241, 234, 0.9)) !important;
+}
+
+/* تنعيم حركة الانتقال */
+.islamic-card {
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.islamic-card {
+    position: relative;
+    overflow: hidden;
+}
+
+    .islamic-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(600px circle at var(--mouse-x) var(--mouse-y), rgba(39, 174, 96, 0.06), transparent 40%);
+        z-index: 0;
+        pointer-events: none;
+    }
+body {
+    /* تدرج لوني دافئ يشبه لون الورق القديم */
+    background: radial-gradient(circle at center, #ffffff 0%, #f4f1ea 100%);
+    position: relative;
+    min-height: 100vh;
+}
+
+    body::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        /* استخدام نقش زخرفي شفاف */
+        background-image: url('https://www.transparenttextures.com/patterns/islamic-art.png');
+        opacity: 0.05; /* شفافة جداً لكي لا تشوش على النص */
+        z-index: -1;
+        pointer-events: none;
+    }
+    /* صندوق البحث الرئيسي */
+.search-container {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px); /* تأثير الزجاج الضبابي */
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+    border: 1px solid rgba(255,255,255,0.5);
+    padding: 40px;
+}
+
+/* الأزرار الكبيرة (تصفح الرواة والتصنيفات) */
+.btn-category {
+    transition: all 0.3s ease;
+    border-radius: 15px;
+    overflow: hidden;
+    position: relative;
+}
+
+.btn-category:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+body {
+    /* تدرج لوني يبرز المحتوى */
+    background: radial-gradient(circle at center, #ffffff 0%, #f1eee4 100%) !important;
+    background-attachment: fixed;
+    position: relative;
+}
+
+    body::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        /* نقش إسلامي كلاسيكي */
+        background-image: url('https://www.transparenttextures.com/patterns/islamic-art.png');
+        opacity: 0.1; /* رفعنا الشفافية قليلاً لتتأكد من ظهورها */
+        z-index: -1;
+        pointer-events: none;
+    }
+
+/* تجميل صندوق البحث الرئيسي */
+.search-box-container {
+    background: rgba(255, 255, 255, 0.8) !important;
+    backdrop-filter: blur(8px);
+    border-radius: 25px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+/* هذا السطر يضمن أن النقوش لا تعيق النقر على الأزرار */
+body::before {
+    pointer-events: none !important;
+}
+
+/* إذا كنت استخدمت Loader في الـ JS، تأكد من إخفائه تماماً بعد التحميل */
+#loader-id {
+    pointer-events: none;
+}

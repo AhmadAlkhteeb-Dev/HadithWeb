@@ -1,0 +1,33 @@
+﻿<div class="container mt-5" dir="rtl">
+    <div class="row justify-content-center">
+        <div class="col-md-5">
+            <div class="card shadow border-0">
+                <div class="card-header bg-success text-white text-center py-3">
+                    <h4>تسجيل الدخول</h4>
+                </div>
+                <div class="card-body p-4">
+                    @if (ViewBag.Error != null)
+                    {
+                        <div class="alert alert-danger text-end">@ViewBag.Error</div>
+                    }
+
+                    <form asp-action="Login" method="post">
+                        <div class="mb-3 text-end">
+                            <label class="form-label">البريد الإلكتروني</label>
+                            <input name="email" type="email" class="form-control" placeholder="example@mail.com" required />
+                        </div>
+                        <div class="mb-3 text-end">
+                            <label class="form-label">كلمة المرور</label>
+                            <input name="password" type="password" class="form-control" placeholder="******" required />
+                        </div>
+                        <button type="submit" class="btn btn-success w-100">دخول</button>
+                    </form>
+                    
+                    <div class="text-center mt-3">
+                        <p>ليس لديك حساب؟ <a href="/Account/Register">أنشئ حساباً الآن</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
